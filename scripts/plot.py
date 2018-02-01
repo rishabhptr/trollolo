@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 import matplotlib.pyplot as plt
+import os
 
 
 class Plot:
@@ -68,7 +69,15 @@ class Plot:
     return
 
   def saveImage(self, args):
-    plt.savefig('burndown-' + args.sprint + '.png',bbox_inches='tight')
+    path = args.location
+    filename = 'burndown' + args.sprint + '.png'
+    if path:
+      if not os.path.exists(path):
+        os.makedirs(path)
+      savepath = os.path.join(path,filename)
+    else:
+      savepath = filename
+    plt.savefig(savepath,bbox_inches='tight')
     if not args.no_head:
       plt.show()
     return
@@ -149,5 +158,3 @@ class Plot:
     fast_lane['plot_count'] = self.plot_count
     self.plot_count += 1
     return fast_lane
-
-
