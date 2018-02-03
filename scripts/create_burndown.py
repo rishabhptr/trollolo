@@ -33,6 +33,9 @@ def parseCommandLine():
   parser.add_argument('--no-head', action='store_true', help='Run in headless mode', default=False)
   args = parser.parse_args()
 
+  if args.location:
+    args.location = os.path.join(os.getcwd(),args.location)
+
   if args.output:
     os.chdir(args.output)
 
