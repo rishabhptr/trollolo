@@ -12,8 +12,6 @@
 
 ## Version 0.2.0
 
-* Allow to select location to save burndown chart file through `--location`
-  option in the `burndown` command.
 * Require Ruby to be >= 2.2.0 and < 2.4.2 until #139 is fixed.
 * `burndown-init` only requires the `--board-id` option. The `--output` option
   is optional and defaults to the current working directory. Fix #103.
