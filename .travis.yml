@@ -3,6 +3,7 @@ cache: bundler
 before_install:
   - gem --version
   - gem list bundler
+  - sudo apt-get install python-matplotlib
 rvm:
   - "2.2.3"
   - "2.3.1"
