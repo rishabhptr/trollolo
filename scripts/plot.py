@@ -2,8 +2,6 @@
 import matplotlib.pyplot as plt
 import os
 
-
-
 class Plot:
   "Set all parameters needed to print burndown charts"
 
