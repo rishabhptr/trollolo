@@ -4,7 +4,7 @@ before_install:
   - gem --version
   - gem list bundler
   - sudo apt-get install python-matplotlib
-  - xvfb-run --server-args="-screen 0 1024x768x24" make test
+  - "export DISPLAY=:99.0"
 rvm:
   - "2.2.3"
   - "2.3.1"
