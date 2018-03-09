@@ -2,9 +2,6 @@ language: ruby
 cache: bundler
 before_install:
   - gem list bundler
-  - sudo apt-get install python-matplotlib
-  - "export DISPLAY=:99.0"
-  - "sh -e /etc/init.d/xvfb start"
 rvm:
   - "2.2.3"
   - "2.3.1"

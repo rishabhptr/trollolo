@@ -70,7 +70,7 @@ class Plot:
 
   def saveImage(self, args):
     path = args.location
-    filename = 'burndown' + args.sprint + '.png'
+    filename = 'burndown-' + args.sprint + '.png'
     if path:
       if not os.path.exists(path):
         os.makedirs(path)
