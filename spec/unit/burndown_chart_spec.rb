@@ -507,20 +507,11 @@ EOT
   end
 
   describe '.plot' do
-    use_given_filesystem
-
     it 'sends joined parsed options to python script' do
       allow(described_class).to receive(:process_options).and_return(%w{ --test 1 --no-blah })
       allow(described_class).to receive(:plot_helper).and_return('mescript')
       expect(described_class).to receive(:system).with('python mescript 42 --test 1 --no-blah')
       described_class.plot(42, foo: 1, bar: 2)
-    end
-
-    it 'saves image file in given location' do
-      dir = given_directory
-      allow(described_class).to receive(:process_options).and_return(%W{--output spec/data/burndown_dir --location #{dir} --no-head})
-      described_class.plot(2, foo: 1)
-      expect(File.exist?(File.join(dir, 'burndown02.png'))).to be true
     end
   end
 
